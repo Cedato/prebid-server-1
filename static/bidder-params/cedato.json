@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Cedato Adapter Params",
+  "description": "A schema which validates params accepted by the Cedato adapter",
+  "type": "object",
+  "properties": {
+    "player_id": {
+      "type": "integer",
+      "description": "The player ID from Cedato"
+    },
+    "bidfloor": {
+      "type": "number",
+      "description": "Bid floor value"
+    }
+  },
+  "required": ["player_id"]
+}

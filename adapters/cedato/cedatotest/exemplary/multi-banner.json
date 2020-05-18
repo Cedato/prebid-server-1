@@ -1,0 +1,108 @@
+{
+  "mockBidRequest": {
+    "id": "test-request-id",
+    "imp": [
+      {
+        "id": "test-imp-id",
+        "banner": {
+          "format": [
+            {
+              "w": 300,
+              "h": 250
+            },
+            {
+              "w": 300,
+              "h": 600
+            }
+          ]
+        },
+        "ext": {
+          "bidder": {
+            "player_id": 1450133326
+          }
+        }
+      }
+    ]
+  },
+
+  "httpCalls": [
+    {
+      "expectedRequest": {
+        "uri": "https://h.cedatoplayer.com/hb",
+        "body": {
+          "id": "test-request-id",
+          "at":1,
+          "imp": [
+            {
+              "id": "test-imp-id",
+              "banner": {
+                "format": [
+                  {
+                    "w": 300,
+                    "h": 250
+                  },
+                  {
+                    "w": 300,
+                    "h": 600
+                  }
+                ],
+                "w": 300,
+                "h": 250
+              },
+              "ext": {
+                "bidder": {
+                  "player_id": 1450133326
+                }
+              }
+            }
+          ]
+        }
+      },
+      "mockResponse": {
+        "status": 200,
+        "body": {
+          "id": "some-request-id",
+          "bidid": "z0rgw27uhvcnlxun",
+          "seatbid": [
+            {
+              "seat": "0",
+              "bid": [
+                {
+                  "id": "c0ff9be0-9915-11ea-ad1f-acde48001122",
+                  "impid": "some-impression-id",
+                  "uuid": "c0ff9be0-9915-11ea-ad1f-acde48001122",
+                  "crid": "1450133326",
+                  "price": 2.6,
+                  "w": 300,
+                  "h": 600,
+                  "media_type": "banner",
+                  "adm": "some-test-ad"
+                }
+              ]
+            }
+          ],
+          "cur": "USD"
+        }
+      }
+    }
+  ],
+
+  "expectedBidResponses": [{
+    "currency": "USD",
+    "bids": [
+      {
+        "bid": {
+            "id": "c0ff9be0-9915-11ea-ad1f-acde48001122",
+            "impid": "some-impression-id",
+            "crid": "1450133326",
+            "price": 2.6,
+            "w": 300,
+            "h": 600,
+            "adm": "some-test-ad"
+        },
+        "type": "banner"
+      }
+      ]
+    }
+  ]
+}
